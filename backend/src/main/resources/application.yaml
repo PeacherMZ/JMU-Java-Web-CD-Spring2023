@@ -1,4 +1,6 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://mysql.peacher.cn/
+    url: jdbc:mysql://mysql.peacher.cn:3306/javaweb?useUnicode=true&characterEncoding=utf-8
+    username: peacher
+    password: Mb5KbbhjBmNAkMdD
