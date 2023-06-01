@@ -1,6 +1,6 @@
-package cn.peacher.disk.backend.config;
+package jmu.ztj.goodisk.config;
 
-import cn.peacher.disk.backend.interceptor.AuthorizeInterceptor;
+import jmu.ztj.goodisk.interceptor.AuthorizeInterceptor;
 import jakarta.annotation.Resource;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

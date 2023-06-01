@@ -1,11 +1,8 @@
-package cn.peacher.disk.backend.mapper;
+package jmu.ztj.goodisk.mapper;
 
-import cn.peacher.disk.backend.entity.account.Account;
-import cn.peacher.disk.backend.entity.account.AccountInfo;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import jmu.ztj.goodisk.entity.account.Account;
+import jmu.ztj.goodisk.entity.account.AccountInfo;
+import org.apache.ibatis.annotations.*;
 
 @Mapper
 public interface UserMapper {
@@ -26,4 +23,7 @@ public interface UserMapper {
     int editUserInfoWithoutPwd(int id, String username, String email);
     @Select("select id, username, email from db_account ")
     AccountInfo[] getAllAccountInfo();
+
+    @Delete("delete from db_account where id=#{id}")
+    int deleteUserById(int id);
 }

@@ -1,6 +1,5 @@
-package cn.peacher.disk.backend.entity;
+package jmu.ztj.goodisk.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data

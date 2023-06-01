@@ -1,9 +1,8 @@
-package cn.peacher.disk.backend.service.impl;
+package jmu.ztj.goodisk.service.impl;
 
-import cn.peacher.disk.backend.entity.account.Account;
-import cn.peacher.disk.backend.entity.account.AccountInfo;
-import cn.peacher.disk.backend.mapper.UserMapper;
-import cn.peacher.disk.backend.service.AuthorizeService;
+import jmu.ztj.goodisk.entity.account.Account;
+import jmu.ztj.goodisk.mapper.UserMapper;
+import jmu.ztj.goodisk.service.AuthorizeService;
 import jakarta.annotation.Resource;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;

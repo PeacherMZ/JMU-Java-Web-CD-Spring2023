@@ -1,6 +1,5 @@
-package cn.peacher.disk.backend.service;
+package jmu.ztj.goodisk.service;
 
-import cn.peacher.disk.backend.entity.account.AccountInfo;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface AuthorizeService extends UserDetailsService {

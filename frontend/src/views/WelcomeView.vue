@@ -19,6 +19,16 @@
 </template>
 
 <script setup>
+import {get} from "@/net";
+import router from "@/router";
+import {ElMessage} from "element-plus";
+
+get('/api/user/me',(message)=>{
+  router.push('/index')
+},(message)=>{
+  console.log('Login needed.')
+})
+
 </script>
 
 <style scoped>

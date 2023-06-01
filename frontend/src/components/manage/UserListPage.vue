@@ -20,6 +20,7 @@
 import router from "@/router";
 import {onMounted, ref} from 'vue';
 import {post} from "@/net";
+import {ElMessage, ElMessageBox} from "element-plus";
 
 onMounted(()=>{
   fetchData()
@@ -29,21 +30,35 @@ let tableKey = ref()
 const fetchData = () =>{
   post('/api/user/getAllUsers', {}, (message) => {
     userData.value = JSON.parse(message)
-    console.log(userData)
+    // console.log(userData)
   })
 }
-
-const fetchUserData = (userId) => {
-
-}
-
 
 const handleEdit = (index,row) => {
   router.push('/admin/editUser/'+row.id)
 }
 
 const handleDelete = (index,row) => {
+  ElMessageBox.confirm('确定要删除用户'+row.username+'吗？')
+      .then(() => {
+        deleteUser(row.id)
+      })
+      .catch(() => {
+        console.log("Canceled to delete user.")
+      })
+}
 
+
+const deleteUser = (id) => {
+  post('/api/user/deleteUser', {
+    id:id
+  }, (message) => {
+    ElMessage.success(message)
+    setTimeout(function (){
+      window.location.reload();
+    }, 2000);
+    // console.log(userData)
+  })
 }
 </script>
 

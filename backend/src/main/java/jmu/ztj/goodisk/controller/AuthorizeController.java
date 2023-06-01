@@ -1,7 +1,7 @@
-package cn.peacher.disk.backend.controller;
+package jmu.ztj.goodisk.controller;
 
-import cn.peacher.disk.backend.entity.RestBean;
-import cn.peacher.disk.backend.service.AuthorizeService;
+import jmu.ztj.goodisk.entity.RestBean;
+import jmu.ztj.goodisk.service.AuthorizeService;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.validation.annotation.Validated;

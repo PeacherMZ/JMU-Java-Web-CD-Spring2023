@@ -1,7 +1,7 @@
-package cn.peacher.disk.backend.interceptor;
+package jmu.ztj.goodisk.interceptor;
 
-import cn.peacher.disk.backend.entity.account.AccountInfo;
-import cn.peacher.disk.backend.mapper.UserMapper;
+import jmu.ztj.goodisk.entity.account.AccountInfo;
+import jmu.ztj.goodisk.mapper.UserMapper;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -21,7 +21,9 @@ public class AuthorizeInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler){
         SecurityContext context = SecurityContextHolder.getContext();
         Authentication authentication = context.getAuthentication();
-//        System.out.println(authentication.getPrincipal());
+        System.out.println(authentication.getPrincipal());
+        if(authentication.getPrincipal().toString().equals("anonymousUser"))
+            return true;
         User user = (User)authentication.getPrincipal();
         String username = user.getUsername();
 //        System.out.println(username);

@@ -1,4 +1,4 @@
-package cn.peacher.disk.backend.entity.account;
+package jmu.ztj.goodisk.entity.account;
 
 import lombok.Data;
 

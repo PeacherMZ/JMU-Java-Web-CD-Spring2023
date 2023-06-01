@@ -1,13 +1,12 @@
-package cn.peacher.disk.backend.controller;
+package jmu.ztj.goodisk.controller;
 
-import cn.peacher.disk.backend.entity.RestBean;
-import cn.peacher.disk.backend.entity.account.AccountInfo;
-import cn.peacher.disk.backend.service.UserService;
+import jmu.ztj.goodisk.entity.RestBean;
+import jmu.ztj.goodisk.entity.account.AccountInfo;
+import jmu.ztj.goodisk.service.UserService;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpSession;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -53,5 +52,15 @@ public class UserController {
     public RestBean<AccountInfo> getMyInfo(@SessionAttribute("account") AccountInfo account,
                                            HttpSession session){
         return RestBean.success(account);
+    }
+
+    @PostMapping("/deleteUser")
+    public RestBean<String> deleteUserById(int id, HttpSession session){
+        int res = service.deleteUser(id);
+        if(res > 0){
+            return RestBean.success("删除成功");
+        } else {
+            return RestBean.failure(400,"删除失败");
+        }
     }
 }
