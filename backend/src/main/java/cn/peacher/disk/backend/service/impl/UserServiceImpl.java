@@ -5,6 +5,7 @@ import cn.peacher.disk.backend.entity.account.AccountInfo;
 import cn.peacher.disk.backend.mapper.UserMapper;
 import cn.peacher.disk.backend.service.UserService;
 import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -36,8 +37,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public AccountInfo[] loadAllUserInfo() {
+    public AccountInfo[] loadAllUserInfo(String session) {
         AccountInfo[] accountInfos = mapper.getAllAccountInfo();
+
         return accountInfos;
     }
 

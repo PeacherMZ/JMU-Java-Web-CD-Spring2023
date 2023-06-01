@@ -33,6 +33,12 @@ public class AuthorizeServiceImpl implements AuthorizeService {
 
     @Override
     public String validateAndRegister(String username, String password, String email, String sessionId) {
+        if(mapper.findAccountByNameOrEmail(username) != null){
+            return "该账号已存在";
+        }
+        if(mapper.findAccountByNameOrEmail(email) != null){
+            return "此邮箱已被注册";
+        }
         password = encoder.encode(password);
         if (mapper.createAccount(username, password, email) > 0) {
             return null;
