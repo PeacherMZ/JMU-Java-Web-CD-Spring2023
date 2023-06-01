@@ -1,8 +1,9 @@
 package cn.peacher.disk.backend.service;
 
 import cn.peacher.disk.backend.entity.account.AccountInfo;
-import org.springframework.security.core.userdetails.UserDetailsService;
 
-public interface UserService extends UserDetailsService {
+public interface UserService {
     AccountInfo loadUsernameAndEmail(int id, String session);
+    int editUserInfo(int id, String username, String password, String email);
+    AccountInfo[] loadAllUserInfo();
 }

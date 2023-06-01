@@ -1,6 +1,6 @@
 package cn.peacher.disk.backend.entity.account;
 
 public class AccountInfo {
-    String email;
-    String username;
+    public String email;
+    public String username;
 }

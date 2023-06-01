@@ -9,7 +9,9 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl implements UserService {
     @Resource
     UserMapper mapper;
@@ -22,16 +24,22 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        if(username == null)
-            throw new UsernameNotFoundException("用户名不能为空");
-        Account account = mapper.findAccountByNameOrEmail(username);
-        if(account == null)
-            throw new UsernameNotFoundException("用户名或密码错误");
-        return User
-                .withUsername(account.getUsername())
-                .password(account.getPassword())
-                .roles("user")
-                .build();
+    public int editUserInfo(int id, String username, String password, String email) {
+        int res = 0;
+        if(password.equals("")){
+            res = mapper.editUserInfoWithoutPwd(id,username,email);
+        } else {
+            password = encoder.encode(password);
+            res = mapper.editUserInfoWithPwd(id,username,password,email);
+        }
+        return res;
     }
+
+    @Override
+    public AccountInfo[] loadAllUserInfo() {
+        AccountInfo[] accountInfos = mapper.getAllAccountInfo();
+        return accountInfos;
+    }
+
+
 }

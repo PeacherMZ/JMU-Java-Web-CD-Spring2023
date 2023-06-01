@@ -31,11 +31,16 @@ const router = createRouter({
             component: () => import('@/views/AdminView.vue'),
             children:[
                 {
-                    path: 'editUser/:userId',
-                    name: 'admin-editUser',
-                    component:()=> import('@/components/manage/EditUserPage.vue')
-                }
+                    path: 'userList',
+                    name: 'admin-userList',
+                    component:()=> import('@/components/manage/UserListPage.vue')
+                },
             ]
+        },
+        {
+            path: '/admin/editUser/:userId',
+            name: 'admin-editUser',
+            component:()=> import('@/components/manage/EditUserPage.vue')
         }
     ]
 })
