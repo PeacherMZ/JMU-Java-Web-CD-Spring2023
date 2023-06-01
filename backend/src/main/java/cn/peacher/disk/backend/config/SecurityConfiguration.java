@@ -39,7 +39,7 @@ public class SecurityConfiguration {
                                            PersistentTokenRepository repository) throws Exception {
         return http
                 .authorizeHttpRequests()
-                .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers("/api/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

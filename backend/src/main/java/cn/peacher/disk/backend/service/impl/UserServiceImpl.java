@@ -3,20 +3,24 @@ package cn.peacher.disk.backend.service.impl;
 import cn.peacher.disk.backend.entity.account.Account;
 import cn.peacher.disk.backend.entity.account.AccountInfo;
 import cn.peacher.disk.backend.mapper.UserMapper;
-import cn.peacher.disk.backend.service.AuthorizeService;
+import cn.peacher.disk.backend.service.UserService;
 import jakarta.annotation.Resource;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Service;
 
-@Service
-public class AuthorizeServiceImpl implements AuthorizeService {
-
+public class UserServiceImpl implements UserService {
     @Resource
     UserMapper mapper;
     BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+    @Override
+    public AccountInfo loadUsernameAndEmail(int id, String session) {
+        AccountInfo accountInfo = mapper.getAccountUsernameAndEmailById(id);
+        if(accountInfo == null) throw new UsernameNotFoundException("ID为 "+id+" 的用户不存在");
+        return accountInfo;
+    }
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         if(username == null)
@@ -30,17 +34,4 @@ public class AuthorizeServiceImpl implements AuthorizeService {
                 .roles("user")
                 .build();
     }
-
-    @Override
-    public String validateAndRegister(String username, String password, String email, String sessionId) {
-        password = encoder.encode(password);
-        if (mapper.createAccount(username, password, email) > 0) {
-            return null;
-        } else {
-            return "内部错误，请联系管理员";
-        }
-    }
-
-
-
 }

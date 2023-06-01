@@ -14,7 +14,7 @@
                         </el-input>
                     </el-form-item>
                     <el-form-item prop="password">
-                        <el-input v-model="form.password" type="text" placeholder="密码">
+                        <el-input v-model="form.password" type="password" placeholder="密码">
                             <template #prefix>
                                 <el-icon>
                                     <Lock/>
@@ -74,6 +74,7 @@ import {EditPen, Lock, Message, User} from "@element-plus/icons-vue";
 import {reactive, ref} from "vue";
 import router from "@/router";
 import {ElMessage} from "element-plus";
+import {post} from "@/net";
 
 
 const form = reactive({
@@ -96,7 +97,14 @@ const rules = {
 const formRef = ref()
 
 const register = () =>{
-
+    post('/api/auth/register',{
+        username: form.username,
+        password: form.password,
+        email: form.email
+    }, (message) => {
+        ElMessage.success(message)
+        router.push('/')
+    })
 }
 
 const sendCode = () =>{

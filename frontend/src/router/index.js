@@ -24,6 +24,18 @@ const router = createRouter({
             path: '/index',
             name: 'index',
             component: () => import('@/views/IndexView.vue')
+        },
+        {
+            path:'/admin',
+            name: 'admin',
+            component: () => import('@/views/AdminView.vue'),
+            children:[
+                {
+                    path: 'editUser/:userId',
+                    name: 'admin-editUser',
+                    component:()=> import('@/components/manage/EditUserPage.vue')
+                }
+            ]
         }
     ]
 })

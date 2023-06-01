@@ -1,4 +1,4 @@
-package cn.peacher.disk.backend.entity;
+package cn.peacher.disk.backend.entity.account;
 
 import lombok.Data;
 
