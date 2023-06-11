@@ -1,7 +1,7 @@
-package jmu.ztj.goodisk.config;
+package cn.labelpub.config;
 
-import jmu.ztj.goodisk.entity.RestBean;
-import jmu.ztj.goodisk.service.AuthorizeService;
+import cn.labelpub.entity.RestBean;
+import cn.labelpub.service.AuthorizeService;
 import com.alibaba.fastjson.JSONObject;
 import jakarta.annotation.Resource;
 import jakarta.servlet.ServletException;

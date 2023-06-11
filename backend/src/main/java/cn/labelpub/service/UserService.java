@@ -1,6 +1,6 @@
-package jmu.ztj.goodisk.service;
+package cn.labelpub.service;
 
-import jmu.ztj.goodisk.entity.account.AccountInfo;
+import cn.labelpub.entity.account.AccountInfo;
 
 public interface UserService {
     AccountInfo loadUsernameAndEmail(int id, String session);

@@ -1,6 +1,6 @@
-package jmu.ztj.goodisk.config;
+package cn.labelpub.config;
 
-import jmu.ztj.goodisk.interceptor.AuthorizeInterceptor;
+import cn.labelpub.interceptor.AuthorizeInterceptor;
 import jakarta.annotation.Resource;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

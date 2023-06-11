@@ -1,8 +1,8 @@
-package jmu.ztj.goodisk.service.impl;
+package cn.labelpub.service.impl;
 
-import jmu.ztj.goodisk.entity.account.AccountInfo;
-import jmu.ztj.goodisk.mapper.UserMapper;
-import jmu.ztj.goodisk.service.UserService;
+import cn.labelpub.entity.account.AccountInfo;
+import cn.labelpub.mapper.UserMapper;
+import cn.labelpub.service.UserService;
 import jakarta.annotation.Resource;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

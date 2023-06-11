@@ -1,8 +1,8 @@
-package jmu.ztj.goodisk.controller;
+package cn.labelpub.controller;
 
-import jmu.ztj.goodisk.entity.RestBean;
-import jmu.ztj.goodisk.entity.account.AccountInfo;
-import jmu.ztj.goodisk.service.UserService;
+import cn.labelpub.entity.account.AccountInfo;
+import cn.labelpub.entity.RestBean;
+import cn.labelpub.service.UserService;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import jakarta.annotation.Resource;

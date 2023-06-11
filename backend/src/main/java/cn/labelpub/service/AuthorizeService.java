@@ -1,4 +1,4 @@
-package jmu.ztj.goodisk.service;
+package cn.labelpub.service;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
 

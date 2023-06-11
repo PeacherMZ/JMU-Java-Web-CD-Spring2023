@@ -34,7 +34,7 @@ const router = createRouter({
                     path: 'userList',
                     name: 'admin-userList',
                     component:()=> import('@/components/manage/UserListPage.vue')
-                },
+                }
             ]
         },
         {

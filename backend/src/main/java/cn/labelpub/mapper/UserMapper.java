@@ -1,7 +1,7 @@
-package jmu.ztj.goodisk.mapper;
+package cn.labelpub.mapper;
 
-import jmu.ztj.goodisk.entity.account.Account;
-import jmu.ztj.goodisk.entity.account.AccountInfo;
+import cn.labelpub.entity.account.Account;
+import cn.labelpub.entity.account.AccountInfo;
 import org.apache.ibatis.annotations.*;
 
 @Mapper

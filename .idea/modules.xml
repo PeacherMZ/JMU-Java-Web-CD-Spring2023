@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MVVM-study.iml" filepath="$PROJECT_DIR$/MVVM-study.iml" />
       <module fileurl="file://$PROJECT_DIR$/frontend/frontend.iml" filepath="$PROJECT_DIR$/frontend/frontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/labelpub.iml" filepath="$PROJECT_DIR$/labelpub.iml" />
     </modules>
   </component>
 </project>

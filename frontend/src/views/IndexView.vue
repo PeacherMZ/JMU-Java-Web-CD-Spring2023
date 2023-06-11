@@ -20,6 +20,12 @@ import {get, post} from "@/net";
 import {ElMessage} from "element-plus";
 import router from "@/router";
 
+get('/api/user/me',(message)=>{
+
+},(message)=>{
+    router.push('/')
+})
+
 const goUserList = () => {
   router.push('/admin/userList')
 }

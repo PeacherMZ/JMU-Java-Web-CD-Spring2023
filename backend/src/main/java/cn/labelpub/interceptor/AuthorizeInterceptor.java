@@ -1,7 +1,7 @@
-package jmu.ztj.goodisk.interceptor;
+package cn.labelpub.interceptor;
 
-import jmu.ztj.goodisk.entity.account.AccountInfo;
-import jmu.ztj.goodisk.mapper.UserMapper;
+import cn.labelpub.entity.account.AccountInfo;
+import cn.labelpub.mapper.UserMapper;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

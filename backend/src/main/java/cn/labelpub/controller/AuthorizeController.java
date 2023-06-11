@@ -1,7 +1,7 @@
-package jmu.ztj.goodisk.controller;
+package cn.labelpub.controller;
 
-import jmu.ztj.goodisk.entity.RestBean;
-import jmu.ztj.goodisk.service.AuthorizeService;
+import cn.labelpub.entity.RestBean;
+import cn.labelpub.service.AuthorizeService;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.validation.annotation.Validated;

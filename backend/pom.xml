@@ -65,7 +65,7 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.springframework.security</groupId>
+            <groupId>org.springframework.security</groupId><!--shiro-->
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>

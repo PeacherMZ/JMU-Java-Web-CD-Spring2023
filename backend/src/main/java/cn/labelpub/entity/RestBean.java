@@ -1,4 +1,4 @@
-package jmu.ztj.goodisk.entity;
+package cn.labelpub.entity;
 
 import lombok.Data;
 

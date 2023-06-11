@@ -1,4 +1,4 @@
-package jmu.ztj.goodisk;
+package cn.labelpub;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

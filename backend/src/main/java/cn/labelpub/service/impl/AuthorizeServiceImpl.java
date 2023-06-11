@@ -1,8 +1,8 @@
-package jmu.ztj.goodisk.service.impl;
+package cn.labelpub.service.impl;
 
-import jmu.ztj.goodisk.entity.account.Account;
-import jmu.ztj.goodisk.mapper.UserMapper;
-import jmu.ztj.goodisk.service.AuthorizeService;
+import cn.labelpub.entity.account.Account;
+import cn.labelpub.mapper.UserMapper;
+import cn.labelpub.service.AuthorizeService;
 import jakarta.annotation.Resource;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
